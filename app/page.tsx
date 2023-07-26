@@ -11,7 +11,7 @@ export default function Home() {
   const el = React.useRef(null);
   React.useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Node.js Developer', 'React.js Developer', 'Full Stack Developer'],
+      strings: [ 'Full Stack Developer', 'Node.js Developer', 'React.js Developer', 'Full Stack Developer'],
       typeSpeed: 75,
       backSpeed: 75,
       loop: true,

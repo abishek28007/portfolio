@@ -20,7 +20,7 @@ export default function Weather() {
   const [data, setData] = useState<WeatherData | null>(null);
   const [location, setLocation] = useState("bokaro");
   const [tempUnit, setTempUnit] = useState(0); // 0 -> C & 1 -> F
-  const locationInput = useRef(null);
+  const locationInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (location) {
@@ -44,7 +44,7 @@ export default function Weather() {
               <input className="w-full bg-transparent border rounded-md h-8 text-center outline-none" />
             </div>
             <div className="text-center rounded-md border w-full sm:mx-auto sm:w-min">
-              <button className="bg-transparent px-8 h-8" onClick={() => { setLocation(locationInput.current.value) }}>Search</button>
+              <button className="bg-transparent px-8 h-8" onClick={() => { locationInput.current && setLocation(locationInput.current.value) }}>Search</button>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function Weather() {
             </div>
             <div className="text-center rounded-md w-full sm:mx-auto sm:w-min">
               <button className="bg-transparent border w-full rounded-md px-8 h-8" onClick={() => {
-                setLocation(locationInput.current?.value);
+                setLocation(locationInput.current!.value);
               }}>Search</button>
             </div>
           </div>
