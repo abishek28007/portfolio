@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+main {
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(235deg,#326dd8b5, #8bc8ffc9, #326dd8b5) no-repeat; */
+  background: url("/home.svg") no-repeat center center;
+  /* background: url("/osman-rana.jpg") no-repeat center center; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+   background-size: cover;
+}
+.calculator {
+  background: url("/calculator.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.weather {
+  background: url("/weather.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.rpsls{
+  background: url("/rpsls.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.max-h-90-screen{
+  max-height: 90vh;
+}
+.min-h-10 {
+  min-height: 10rem;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.rounded-50 {
+  border-radius: 50%;
+}
+
+@layer components {
+  .bg-glass {
+    @apply backdrop-blur-sm border-gray-300 backdrop-filter bg-opacity-10 backdrop-brightness-75
+  }
+  .text-xy-center{
+    @apply flex justify-center items-center
+  }
+}
+@layer utilities {
+  .flex-45 {
+    flex: 1 1 30%;
+    min-width: 10rem;
+  }
+}
+div {
+  /* outline: auto; */
+}
