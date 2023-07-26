@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-const operandMap = {
+const operandMap: any = {
   "+": "+",
   "-": "-",
   "*": "×",
@@ -14,7 +14,7 @@ export default function Calculator() {
   const [operand, setOperand] = useState<string | null>(null);
   const [input, setInput] = useState("");
 
-  const calculateResult = (op: String) => {
+  const calculateResult = (op: string) => {
 
     if (!input) {
       if (["+", "-", "*", "/"].includes(`${op}`))
@@ -52,7 +52,7 @@ export default function Calculator() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24 calculator text-slate-50">
       <div className="p-4 rounded-lg bg-slate-500 max-w-xs">
         <div className="bg-black p-2">
-          <div className="text-right text-sm" >{result}{operandMap[operand]}</div>
+          <div className="text-right text-sm" >{result}{operand && operandMap[operand]}</div>
           <div className="text-right text-4xl break-words" >{input || 0}</div>
         </div>
         <table className="mt-2 border-separate">
